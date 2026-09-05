@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "خانه", href: "#home" },
@@ -11,28 +12,53 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  /*
+   * Detect page scroll.
+   * After the user moves away from the top of the page,
+   * the navbar receives the glass effect.
+   */
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <section className="w-full">
-      <div className="mx-auto flex min-h-[80px] w-full max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
+    <section
+      className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "border-b border-white/10 bg-[#090E1C]/60 shadow-lg backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex min-h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
         {/* Logo */}
         <div className="flex shrink-0 items-center">
           <a href="#home" aria-label="خانه">
             <img
               src="/logo.svg"
               alt="لوگو سایت"
-              className="h-auto w-[120px] object-contain sm:w-[140px]"
+              className="h-auto w-30 object-contain sm:w-35"
             />
           </a>
         </div>
 
         {/* Desktop Menu + Mobile Menu */}
         <div className="flex items-center">
+
           {/* Desktop Navigation */}
           <nav
             className="hidden items-center gap-6 lg:flex"
             aria-label="منوی اصلی"
-          
           >
             {navItems.map((item) => (
               <a
@@ -65,18 +91,22 @@ export default function Navbar() {
             </span>
 
             <div className="flex w-5 flex-col gap-1.5">
+
+              {/* Top line */}
               <span
                 className={`h-0.5 w-full bg-current transition-transform duration-200 ${
                   isOpen ? "translate-y-2 rotate-45" : ""
                 }`}
               />
 
+              {/* Middle line */}
               <span
                 className={`h-0.5 w-full bg-current transition-opacity duration-200 ${
                   isOpen ? "opacity-0" : "opacity-100"
                 }`}
               />
 
+              {/* Bottom line */}
               <span
                 className={`h-0.5 w-full bg-current transition-transform duration-200 ${
                   isOpen ? "-translate-y-2 -rotate-45" : ""
@@ -89,9 +119,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="border-t border-white/10 px-4 pb-5 pt-4 lg:hidden" dir="rtl">
+        <div
+          className="border-t border-white/10 bg-[#090E1C]/80 px-4 pb-5 pt-4 backdrop-blur-xl lg:hidden"
+          dir="rtl"
+        >
           <nav
-            className="mx-auto flex w-full max-w-[1280px] flex-col gap-2"
+            className="mx-auto flex w-full max-w-7xl flex-col gap-2"
             aria-label="منوی موبایل"
           >
             {navItems.map((item) => (
@@ -118,3 +151,4 @@ export default function Navbar() {
     </section>
   );
 }
+
