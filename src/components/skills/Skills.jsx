@@ -167,7 +167,7 @@ export default function Skills() {
               font-medium
               leading-8
               text-[#9EABC2]
-              sm:text-lg
+              sm:text-lg 
             "
           >
             ابزارهایی که با آن ها ایده را به محصول تبدیل میکن.
