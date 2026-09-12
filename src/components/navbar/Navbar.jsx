@@ -42,10 +42,10 @@ export default function Navbar() {
       <div className="mx-auto flex min-h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
         {/* Logo */}
-        <div className="flex shrink-0 items-center">
+        <div className="flex shrink-0 items-center w-18">
           <a href="#home" aria-label="خانه">
             <img
-              src="/logo.svg"
+              src="/img/logo.webp"
               alt="لوگو سایت"
               className="h-auto w-30 object-contain sm:w-35"
             />

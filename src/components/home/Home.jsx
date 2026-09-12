@@ -1,5 +1,7 @@
+import Contact from "../contact/Contact";
 import Header from "../header/header";
 import Hero from "../hero/Hero";
+import Projects from "../projects/Projects";
 import Skills from "../skills/Skills";
 
 
@@ -9,6 +11,8 @@ function Home() {
             <Header/>
             <Hero/>
             <Skills/>
+            <Projects/>
+            <Contact/>
         </section>
     </> );
 }

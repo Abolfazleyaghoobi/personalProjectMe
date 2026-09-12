@@ -58,7 +58,7 @@ export default function Header() {
               یک توسعه دهنده{" "}
               <span className="relative text-[#36E0BF] lg:-right-20">
                 <MorphText
-                  words={["frontend", "backend", "MERN stack"]}
+                  words={["Frontend", "Backend", "MERN Stack"]}
                   interval={3000}
                   fontSize="50px"
                   fontFamily='"sans", sans-serif'
