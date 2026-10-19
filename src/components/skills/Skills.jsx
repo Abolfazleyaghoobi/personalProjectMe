@@ -16,7 +16,6 @@ const skillCategories = [
       "JavaScript",
       "HTML / CSS",
       "Tailwind CSS",
-      "Next.js",
       "TypeScript",
     ],
   },
@@ -37,9 +36,6 @@ const skillCategories = [
     title: "DATABASE",
     skills: [
       "MongoDB",
-      "Mongoose",
-      "Data Modeling",
-      "Aggregation",
       "MySQL",
     ],
   },

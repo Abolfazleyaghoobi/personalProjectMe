@@ -1,11 +1,16 @@
+import { Routes, Route } from "react-router-dom";
+
+import ProjectsPage from "./components/pageProject";
 import Home from "./components/home/Home";
 
+export default function App() {
+  return (
+    <Routes>
 
+        <Route path="/" element={<Home />} />
 
-function App() {
-  return ( <section className="bg-[#090E1C] scroll-smooth">
-  <Home/>
-  </section> );
+        <Route path="/projects" element={<ProjectsPage />} />
+
+    </Routes>
+  );
 }
-
-export default App;

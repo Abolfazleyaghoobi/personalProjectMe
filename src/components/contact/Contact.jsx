@@ -18,37 +18,31 @@ import { FaXTwitter } from "react-icons/fa6";
 ============================================================================ */
 
 const contactInfo = {
-  email: "your-email@example.com",
-  phone: "+49 000 0000000",
+  email: "ay2005@gmail.com",
+  phone: "+989917891296",
 
   socialLinks: [
     {
       name: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/Abolfazleyaghoobi",
       icon: FaGithub,
     },
 
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      href: "www.linkedin.com/in/abolfazle-yaghoobi-a99638348",
       icon: FaLinkedinIn,
     },
 
     {
       name: "Telegram",
-      href: "https://t.me/yourusername",
+      href: "https://t.me/h0meCode",
       icon: FaTelegramPlane,
     },
 
     {
-      name: "X",
-      href: "https://x.com/yourusername",
-      icon: FaXTwitter,
-    },
-
-    {
       name: "Instagram",
-      href: "https://instagram.com/yourusername",
+      href: "https://www.instagram.com/abolfazle_dev?stkn=cXNuMHVvYWR6N24z",
       icon: FaInstagram,
     },
   ],

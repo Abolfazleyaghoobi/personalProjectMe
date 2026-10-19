@@ -7,7 +7,7 @@ import Skills from "../skills/Skills";
 
 function Home() {
     return ( <>
-        <section className=" ">
+        <section className=" bg-[#090E1C] scroll-smooth">
             <Header/>
             <Hero/>
             <Skills/>
